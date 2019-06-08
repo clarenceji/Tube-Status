@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Tube Status
+//  LLDB
 //
-//  Created by Clarence Ji on 6/7/19.
+//  Created by Clarence Ji on 6/5/19.
 //  Copyright © 2019 Clarence Ji. All rights reserved.
 //
 
@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: ContentView())
+        window.rootViewController = UIHostingController(rootView: LineView(model: LineModel()))
         self.window = window
         window.makeKeyAndVisible()
     }
