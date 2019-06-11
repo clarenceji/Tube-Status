@@ -24,16 +24,16 @@ struct LineRow : View {
                 Text(line.shortStatus)
                     .font(.subheadline)
                     .color(line.isGoodService ? .green : .red)
+                Spacer()
             }
             
             if !self.line.isGoodService {
                 Text(self.line.reason ?? "")
+                    .lineLimit(nil)
                     .font(.footnote)
-                    .lineLimit(1000)
             }
             
         }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
             .padding([.top, .bottom], 6)
     }
 }
