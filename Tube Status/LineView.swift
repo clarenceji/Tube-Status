@@ -21,7 +21,7 @@ struct LineView : View {
                     self.model.fetch()
                     self.model.isFetching = true
                 }, label: {
-                    Text("Refresh")
+                    Image(systemName: "arrow.2.circlepath")
                 }))
             
             List {
@@ -32,10 +32,8 @@ struct LineView : View {
                 }
             }
                 .navigationBarTitle(Text("Tube Status"), displayMode: .large)
-                
+            
         }
-        
-        
     }
 }
 

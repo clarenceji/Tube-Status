@@ -32,18 +32,12 @@ final class LineModel: BindableObject {
     
     func fetch() {
         
-        let url = URL(string: "https://api.tfl.gov.uk/Line/Mode/tube/Status")!
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let assign = Subscribers.Assign(object: self, keyPath: \.lines)
-        cancellable = assign
-        
-        URLSession.shared.send(request: request)
-            .map { $0.data }
-            .decode(type: [Line].self, decoder: JSONDecoder())
-            .replaceError(with: [])
-            .receive(subscriber: assign)
+        _ = TfLService.loadTubeStatus()
+            .sink(receiveValue: { (lines) in
+                DispatchQueue.main.async { [weak self] in
+                    self?.lines = lines
+                }
+            })
         
     }
     
