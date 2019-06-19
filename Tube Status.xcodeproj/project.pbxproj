@@ -18,6 +18,10 @@
 		116B684122A9E8BB00682311 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116B684022A9E8BB00682311 /* Assets.xcassets */; };
 		116B684422A9E8BB00682311 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116B684322A9E8BB00682311 /* Preview Assets.xcassets */; };
 		116B684722A9E8BB00682311 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116B684522A9E8BB00682311 /* LaunchScreen.storyboard */; };
+		119580CF22BAE03100BF2773 /* LineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119580CE22BAE03100BF2773 /* LineDetail.swift */; };
+		119580D122BAE21600BF2773 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119580D022BAE21600BF2773 /* Station.swift */; };
+		119580D322BAE8A100BF2773 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119580D222BAE8A100BF2773 /* StationModel.swift */; };
+		119580D522BAEF5A00BF2773 /* StationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119580D422BAEF5A00BF2773 /* StationStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		116B684322A9E8BB00682311 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		116B684622A9E8BB00682311 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		116B684822A9E8BB00682311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		119580CE22BAE03100BF2773 /* LineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetail.swift; sourceTree = "<group>"; };
+		119580D022BAE21600BF2773 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		119580D222BAE8A100BF2773 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
+		119580D422BAEF5A00BF2773 /* StationStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				1157F9EB22AC073F00AF0181 /* LineRow.swift */,
+				119580D422BAEF5A00BF2773 /* StationStatusView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -60,8 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				1157F9F022AC073F00AF0181 /* LineModel.swift */,
+				119580D222BAE8A100BF2773 /* StationModel.swift */,
 				1157F9F122AC073F00AF0181 /* MockData.swift */,
 				1157F9F222AC073F00AF0181 /* Line.swift */,
+				119580D022BAE21600BF2773 /* Station.swift */,
 				1157F9FF22AC298D00AF0181 /* TfLService.swift */,
 			);
 			path = Model;
@@ -90,6 +101,7 @@
 				1157F9E922AC073F00AF0181 /* SceneDelegate.swift */,
 				1157F9E722AC073F00AF0181 /* lineData.json */,
 				1157F9E822AC073F00AF0181 /* LineView.swift */,
+				119580CE22BAE03100BF2773 /* LineDetail.swift */,
 				1157F9EF22AC073F00AF0181 /* Model */,
 				1157F9EA22AC073F00AF0181 /* Supporting Views */,
 				116B684022A9E8BB00682311 /* Assets.xcassets */,
@@ -180,13 +192,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1157F9F322AC073F00AF0181 /* LineView.swift in Sources */,
+				119580D322BAE8A100BF2773 /* StationModel.swift in Sources */,
 				116B683B22A9E8BA00682311 /* AppDelegate.swift in Sources */,
 				1157F9F422AC073F00AF0181 /* SceneDelegate.swift in Sources */,
 				1157F9F922AC076300AF0181 /* Line.swift in Sources */,
 				1157F9F722AC076300AF0181 /* LineModel.swift in Sources */,
 				1157FA0022AC298D00AF0181 /* TfLService.swift in Sources */,
+				119580D122BAE21600BF2773 /* Station.swift in Sources */,
+				119580CF22BAE03100BF2773 /* LineDetail.swift in Sources */,
 				1157F9FC22AC076A00AF0181 /* LineRow.swift in Sources */,
 				1157F9F822AC076300AF0181 /* MockData.swift in Sources */,
+				119580D522BAEF5A00BF2773 /* StationStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

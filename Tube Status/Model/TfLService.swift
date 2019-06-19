@@ -28,4 +28,20 @@ struct TfLService {
 
     }
     
+    static func loadStations(on line: Line) -> AnyPublisher<[Station], Error> {
+        
+        let endpoint = baseURL.appendingPathComponent("Line/\(line.id)/StopPoints")
+        var request = URLRequest(url: endpoint, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeoutInterval)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .map({ $0.data })
+            .decode(type: [Station].self, decoder: JSONDecoder())
+            .map({ (stations) -> [Station] in
+                stations.filter({ $0.isTubeStation })
+            })
+            .replaceEmpty(with: [])
+            .eraseToAnyPublisher()
+    }
+    
 }

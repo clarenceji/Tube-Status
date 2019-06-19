@@ -1,21 +1,21 @@
 //
-//  LineRow.swift
-//  LLDB
+//  StationStatusView.swift
+//  Tube Status
 //
-//  Created by Clarence Ji on 6/6/19.
+//  Created by Clarence Ji on 6/19/19.
 //  Copyright © 2019 Clarence Ji. All rights reserved.
 //
 
 import SwiftUI
 
-struct LineRow : View {
+struct StationStatusView : View {
     
     var line: Line
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(line.name + " Line")
-                .font(.body)
+        
+        VStack(alignment: .leading, spacing: 8) {
+            
             HStack(alignment: .center, spacing: 6) {
                 self.line.statusIcon
                     .imageScale(.medium)
@@ -26,19 +26,22 @@ struct LineRow : View {
                 Spacer()
             }
             
+            if !self.line.isGoodService {
+                Text(line.reason ?? "")
+                    .font(.subheadline)
+            }
+            
         }
+            .lineLimit(nil)
             .padding([.top, .bottom], 6)
+        
     }
 }
 
 #if DEBUG
-struct LineRow_Previews : PreviewProvider {
+struct StationStatusView_Previews : PreviewProvider {
     static var previews: some View {
-        Group {
-            LineRow(line: lineData[0])
-            LineRow(line: lineData[2])
-        }
-            .previewLayout(.fixed(width: 300, height: 130))
+        StationStatusView(line: lineData[0])
     }
 }
 #endif

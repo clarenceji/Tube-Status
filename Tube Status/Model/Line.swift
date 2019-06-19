@@ -19,6 +19,10 @@ struct Line: Hashable, Codable, Identifiable {
         var statusSeverity: Int
         var statusSeverityDescription: String
         var reason: String?
+        
+        var worseThanSevereDelay: Bool {
+            return statusSeverity <= 6
+        }
     }
     
     var isGoodService: Bool {
@@ -31,6 +35,34 @@ struct Line: Hashable, Codable, Identifiable {
     
     var reason: String? {
         return topStatus?.reason ?? ""
+    }
+    
+    var statusColor: Color {
+        
+        if isGoodService {
+            return .green
+        }
+        
+        if topStatus?.worseThanSevereDelay == true {
+            return .red
+        }
+        
+        return .orange
+        
+    }
+    
+    var statusIcon: Image {
+        
+        if isGoodService {
+            return Image(systemName: "checkmark.circle.fill")
+        }
+        
+        if topStatus?.worseThanSevereDelay == true {
+            return Image(systemName: "xmark.circle.fill")
+        }
+        
+        return Image(systemName: "exclamationmark.circle.fill")
+        
     }
     
     private var topStatus: Status? {

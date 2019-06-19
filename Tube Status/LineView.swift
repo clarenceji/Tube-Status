@@ -27,12 +27,17 @@ struct LineView : View {
             List {
                 if !model.isFetching {
                     ForEach(model.lines) { line in
-                        LineRow(line: line)
+                        NavigationButton(destination: LineDetail(line: line, model: StationModel()), isDetail: true) {
+                            LineRow(line: line)
+                        }
                     }
                 }
             }
                 .navigationBarTitle(Text("Tube Status"), displayMode: .large)
             
+        }
+        .onAppear {
+            self.model.fetch()
         }
     }
 }
