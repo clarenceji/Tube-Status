@@ -16,27 +16,35 @@ struct LineView : View {
         
         NavigationView {
             
-            List {
+            if !model.isFetching {
                 
-                if !model.isFetching {
+                List {
                     ForEach(model.lines) { line in
                         NavigationLink(destination: LineDetail(line: line, model: StationModel())) {
                             LineRow(line: line)
                         }
                     }
                 }
+                
+                .navigationBarTitle(Text("Tube Status"), displayMode: .large)
+                
+                .navigationBarItems(trailing: Button(action: {
+                    self.model.fetch()
+                    self.model.isFetching = true
+                }, label: {
+                    Image(systemName: "arrow.2.circlepath")
+                }))
+                
+            } else {
+                
+                LoadingView(isAnimating: true, style: .largeVertical)
+                .navigationBarTitle("Tube Status")
+                
             }
-            .navigationBarTitle(Text("Tube Status"), displayMode: .large)
-            
-            .navigationBarItems(trailing: Button(action: {
-                self.model.fetch()
-                self.model.isFetching = true
-            }, label: {
-                Image(systemName: "arrow.2.circlepath")
-            }))
             
         }
         .onAppear {
+            self.model.isFetching = true
             self.model.fetch()
         }
     }

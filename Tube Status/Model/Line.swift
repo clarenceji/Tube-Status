@@ -65,6 +65,10 @@ struct Line: Hashable, Codable, Identifiable {
         
     }
     
+    var lineColor: Color {
+        return Color(id)
+    }
+    
     private var topStatus: Status? {
         return lineStatuses.sorted(by: { $0.statusSeverity < $1.statusSeverity }).first
     }

@@ -27,14 +27,22 @@ struct LineDetail : View {
                         Text(station.stationName)
                     }
                 }
+            } else {
+                
+                Section(header: Text("STATIONS"), footer:
+                    LoadingView(isAnimating: true, style: .smallHorizontal)
+                ) {
+                    EmptyView()
+                }
+                
             }
         }
-            .listStyle(.grouped)
-            .navigationBarTitle(Text(line.name))
-            .onAppear {
-                self.model.fetch(line: self.line)
+        .listStyle(.grouped)
+        .navigationBarTitle(Text(line.name))
+        .onAppear {
+            self.model.isFetching = true
+            self.model.fetch(line: self.line)
         }
-        
         
     }
 }

@@ -13,21 +13,30 @@ struct LineRow : View {
     var line: Line
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(line.name + " Line")
-                .font(.body)
-            HStack(alignment: .center, spacing: 6) {
-                self.line.statusIcon
-                    .imageScale(.medium)
-                    .foregroundColor(line.statusColor)
-                Text(line.shortStatus)
-                    .font(.subheadline)
-                    .color(line.statusColor)
-                Spacer()
-            }
+        HStack {
             
-        }
+            RoundedRectangle(cornerRadius: 2, style: .circular)
+            .frame(width: 4)
+            .foregroundColor(line.lineColor)
+            
+            Spacer()
+            .frame(width: 12)
+            
+            VStack(alignment: .leading, spacing: 6) {
+                Text(line.name + " Line")
+                    .font(.body)
+                HStack(alignment: .center, spacing: 6) {
+                    self.line.statusIcon
+                        .imageScale(.medium)
+                        .foregroundColor(line.statusColor)
+                    Text(line.shortStatus)
+                        .font(.subheadline)
+                        .color(line.statusColor)
+                    Spacer()
+                }
+            }
             .padding([.top, .bottom], 6)
+        }
     }
 }
 

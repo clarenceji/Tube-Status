@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1105FFA622D3E2AD003BF757 /* lineData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1157F9E722AC073F00AF0181 /* lineData.json */; };
+		1150315222D3E64A00F2BD26 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150315122D3E64A00F2BD26 /* ActivityIndicator.swift */; };
+		1150315522D3E72A00F2BD26 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150315422D3E72A00F2BD26 /* LoadingView.swift */; };
 		1157F9F322AC073F00AF0181 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157F9E822AC073F00AF0181 /* LineView.swift */; };
 		1157F9F422AC073F00AF0181 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157F9E922AC073F00AF0181 /* SceneDelegate.swift */; };
 		1157F9F722AC076300AF0181 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157F9F022AC073F00AF0181 /* LineModel.swift */; };
@@ -25,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1150315122D3E64A00F2BD26 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		1150315422D3E72A00F2BD26 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1157F9E722AC073F00AF0181 /* lineData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lineData.json; sourceTree = "<group>"; };
 		1157F9E822AC073F00AF0181 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		1157F9E922AC073F00AF0181 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,11 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1150315322D3E70C00F2BD26 /* UIKit Views */ = {
+			isa = PBXGroup;
+			children = (
+				1150315122D3E64A00F2BD26 /* ActivityIndicator.swift */,
+			);
+			path = "UIKit Views";
+			sourceTree = "<group>";
+		};
 		1157F9EA22AC073F00AF0181 /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
 				1157F9EB22AC073F00AF0181 /* LineRow.swift */,
 				119580D422BAEF5A00BF2773 /* StationStatusView.swift */,
+				1150315322D3E70C00F2BD26 /* UIKit Views */,
+				1150315422D3E72A00F2BD26 /* LoadingView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -181,6 +196,7 @@
 				116B684722A9E8BB00682311 /* LaunchScreen.storyboard in Resources */,
 				116B684422A9E8BB00682311 /* Preview Assets.xcassets in Resources */,
 				116B684122A9E8BB00682311 /* Assets.xcassets in Resources */,
+				1105FFA622D3E2AD003BF757 /* lineData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +211,8 @@
 				119580D322BAE8A100BF2773 /* StationModel.swift in Sources */,
 				116B683B22A9E8BA00682311 /* AppDelegate.swift in Sources */,
 				1157F9F422AC073F00AF0181 /* SceneDelegate.swift in Sources */,
+				1150315222D3E64A00F2BD26 /* ActivityIndicator.swift in Sources */,
+				1150315522D3E72A00F2BD26 /* LoadingView.swift in Sources */,
 				1157F9F922AC076300AF0181 /* Line.swift in Sources */,
 				1157F9F722AC076300AF0181 /* LineModel.swift in Sources */,
 				1157FA0022AC298D00AF0181 /* TfLService.swift in Sources */,
