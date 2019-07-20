@@ -48,6 +48,7 @@
 		119580D022BAE21600BF2773 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		119580D222BAE8A100BF2773 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
 		119580D422BAEF5A00BF2773 /* StationStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusView.swift; sourceTree = "<group>"; };
+		119E8D7F22E0989C00FC35A7 /* Tube Status.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tube Status.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 		116B683922A9E8BA00682311 /* Tube Status */ = {
 			isa = PBXGroup;
 			children = (
+				119E8D7F22E0989C00FC35A7 /* Tube Status.entitlements */,
 				116B683A22A9E8BA00682311 /* AppDelegate.swift */,
 				1157F9E922AC073F00AF0181 /* SceneDelegate.swift */,
 				1157F9E722AC073F00AF0181 /* lineData.json */,
@@ -356,7 +358,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tube Status/Tube Status.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tube Status\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = G6TTA6H999;
 				ENABLE_PREVIEWS = YES;
@@ -367,6 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.clarenceji.sample-code.Tube-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -376,7 +381,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tube Status/Tube Status.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tube Status\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = G6TTA6H999;
 				ENABLE_PREVIEWS = YES;
@@ -387,6 +394,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.clarenceji.sample-code.Tube-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
