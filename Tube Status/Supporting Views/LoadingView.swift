@@ -36,7 +36,7 @@ struct LoadingView : View {
                     ActivityIndicator(isAnimating: $isAnimating, style: .large)
                     Text("Loading...")
                         .font(.caption)
-                        .color(Color("LightTextColor"))
+                        .foregroundColor(Color("LightTextColor"))
                 }
             
             )
@@ -49,7 +49,7 @@ struct LoadingView : View {
                     ActivityIndicator(isAnimating: $isAnimating, style: .medium)
                     Text("Loading...")
                         .font(.caption)
-                        .color(Color("LightTextColor"))
+                        .foregroundColor(Color("LightTextColor"))
                 }
                 
             )

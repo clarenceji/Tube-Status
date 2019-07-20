@@ -28,7 +28,7 @@ struct TfLService {
 
     }
     
-    static func loadStations(on line: Line) -> AnyPublisher<[Station], Error> {
+    static func loadStations(on line: Line) -> AnyPublisher<[Station], Never> {
         
         let endpoint = baseURL.appendingPathComponent("Line/\(line.id)/StopPoints")
         var request = URLRequest(url: endpoint, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeoutInterval)
@@ -40,7 +40,9 @@ struct TfLService {
             .map({ (stations) -> [Station] in
                 stations.filter({ $0.isTubeStation })
             })
-            .replaceEmpty(with: [])
+            .replaceError(with: [
+                Station(id: "", name: "Unable to load", type: "")
+            ])
             .eraseToAnyPublisher()
     }
     

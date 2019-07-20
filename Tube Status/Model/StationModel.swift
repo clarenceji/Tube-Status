@@ -11,18 +11,20 @@ import Combine
 
 final class StationModel: BindableObject {
     
-    let didChange = PassthroughSubject<StationModel, Never>()
+    let willChange = PassthroughSubject<StationModel, Never>()
+    
+//    var willChange: StationModel.PublisherType
     
     var stations: [Station] = [] {
         didSet {
-            didChange.send(self)
+            willChange.send(self)
             isFetching = false
         }
     }
     
     var isFetching: Bool = false {
         didSet {
-            didChange.send(self)
+            willChange.send(self)
         }
     }
     

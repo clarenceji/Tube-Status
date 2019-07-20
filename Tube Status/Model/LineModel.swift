@@ -11,18 +11,18 @@ import Combine
 
 final class LineModel: BindableObject {
     
-    let didChange = PassthroughSubject<LineModel, Never>()
+    let willChange = PassthroughSubject<LineModel, Never>()
     
     var lines: [Line] = [] {
         didSet {
-            didChange.send(self)
+            willChange.send(self)
             isFetching = false
         }
     }
     
     var isFetching: Bool = false {
         didSet {
-            didChange.send(self)
+            willChange.send(self)
         }
     }
     
