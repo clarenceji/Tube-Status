@@ -44,6 +44,7 @@
 		116B684322A9E8BB00682311 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		116B684622A9E8BB00682311 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		116B684822A9E8BB00682311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1181220622E2FC6C004EAFD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		119580CE22BAE03100BF2773 /* LineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetail.swift; sourceTree = "<group>"; };
 		119580D022BAE21600BF2773 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		119580D222BAE8A100BF2773 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		116B682E22A9E8BA00682311 = {
 			isa = PBXGroup;
 			children = (
+				1181220622E2FC6C004EAFD6 /* README.md */,
 				116B683922A9E8BA00682311 /* Tube Status */,
 				116B683822A9E8BA00682311 /* Products */,
 			);
