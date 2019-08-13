@@ -31,7 +31,7 @@ struct LineRow : View {
                         .foregroundColor(line.statusColor)
                     Text(line.shortStatus)
                         .font(.subheadline)
-                        .color(line.statusColor)
+                        .foregroundColor(line.statusColor)
                     Spacer()
                 }
             }

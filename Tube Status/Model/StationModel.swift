@@ -9,22 +9,20 @@
 import SwiftUI
 import Combine
 
-final class StationModel: BindableObject {
+final class StationModel: ObservableObject {
     
-    let willChange = PassthroughSubject<StationModel, Never>()
-    
-//    var willChange: StationModel.PublisherType
+    let objectWillChange = PassthroughSubject<StationModel, Never>()
     
     var stations: [Station] = [] {
-        didSet {
-            willChange.send(self)
+        willSet {
             isFetching = false
+            objectWillChange.send(self)
         }
     }
     
     var isFetching: Bool = false {
-        didSet {
-            willChange.send(self)
+        willSet {
+            objectWillChange.send(self)
         }
     }
     

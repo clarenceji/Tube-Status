@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct LineView : View {
+struct LineView: View {
     
-    @ObjectBinding var model: LineModel
+    @ObservedObject var model: LineModel
     
     var body: some View {
         
@@ -30,21 +30,19 @@ struct LineView : View {
                 
                 .navigationBarItems(trailing: Button(action: {
                     self.model.fetch()
-                    self.model.isFetching = true
                 }, label: {
                     Image(systemName: "arrow.2.circlepath")
                 }))
                 
             } else {
-                
+
                 LoadingView(isAnimating: true, style: .largeVertical)
                 .navigationBarTitle("Tube Status")
-                
+
             }
             
         }
         .onAppear {
-            self.model.isFetching = true
             self.model.fetch()
         }
     }

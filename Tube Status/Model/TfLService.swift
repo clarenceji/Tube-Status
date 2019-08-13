@@ -24,6 +24,7 @@ struct TfLService {
             .map({ $0.data })
             .decode(type: [Line].self, decoder: JSONDecoder())
             .replaceError(with: [])
+            .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
 
     }
@@ -43,6 +44,7 @@ struct TfLService {
             .replaceError(with: [
                 Station(id: "", name: "Unable to load", type: "")
             ])
+            .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
     

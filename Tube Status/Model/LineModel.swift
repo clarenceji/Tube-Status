@@ -9,33 +9,20 @@
 import SwiftUI
 import Combine
 
-final class LineModel: BindableObject {
+final class LineModel: ObservableObject {
     
-    let willChange = PassthroughSubject<LineModel, Never>()
-    
-    var lines: [Line] = [] {
-        didSet {
-            willChange.send(self)
-            isFetching = false
-        }
-    }
-    
-    var isFetching: Bool = false {
-        didSet {
-            willChange.send(self)
-        }
-    }
-    
-    private var cancellable: Cancellable? {
-        didSet { oldValue?.cancel() }
-    }
+    @Published var lines: [Line] = []
+    @Published var isFetching: Bool = false
     
     func fetch() {
         
+        self.isFetching = true
+        
         _ = TfLService.loadTubeStatus()
             .sink(receiveValue: { (lines) in
-                DispatchQueue.main.async { [weak self] in
-                    self?.lines = lines
+                DispatchQueue.main.async {
+                    self.lines = lines
+                    self.isFetching = false
                 }
             })
         

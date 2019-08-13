@@ -11,7 +11,7 @@ import SwiftUI
 struct LineDetail : View {
     
     var line: Line
-    @ObjectBinding var model: StationModel
+    @ObservedObject var model: StationModel
     
     var body: some View {
         
@@ -37,7 +37,7 @@ struct LineDetail : View {
                 
             }
         }
-        .listStyle(.grouped)
+        .listStyle(GroupedListStyle())
         .navigationBarTitle(Text(line.name))
         .onAppear {
             self.model.isFetching = true
